@@ -1,0 +1,34 @@
+{
+  "name": "pomodoro-app",
+  "version": "1.0.0",
+  "description": "A desktop pomodoro application.",
+  "keywords": [
+    "Pomodoro",
+    "PomodoroAPP",
+    "Study",
+    "pomodoro",
+    "pomodoroapp",
+    "timer",
+    "pomodoro"
+  ],
+  "homepage": "https://github.com/Henrik-G69/Pomodoro-APP#readme",
+  "bugs": {
+    "url": "https://github.com/Henrik-G69/Pomodoro-APP/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Henrik-G69/Pomodoro-APP.git"
+  },
+  "license": "ISC",
+  "author": "HenrikS",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "electron": "^36.5.0",
+    "electron-reloader": "^1.2.3"
+  }
+}

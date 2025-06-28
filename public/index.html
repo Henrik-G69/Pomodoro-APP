@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro APP</title>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="App_Container">
+        <div class="Pomodoro">
+            <div class="PomodoroIcon">
+                <img src="../src/assets/icons/seed.png">
+                <div class="PomodoroIcon_shadow"></div>
+            </div>
+            <div class="PomodoroControls">
+                <button id="refreshButton">
+                    <img src="../src/assets/icons/refresh-arrow.svg">
+                </button>
+                <button id="playButton">
+                    <img src="../src/assets/icons/play.svg">
+                </button>
+                <button id="settingsButton">
+                    <img src="../src/assets/icons/settings.svg">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="Timer">
+            <div class="currentTask">Short Break</div>
+            <div class="timerCount">30:00</div>
+            <div class="timerControls_Pomodoro">
+                <button id="timerButton" class="timerControls">
+                    Timer
+                </button>
+                <button id="breakButton" class="timerControls">
+                    Break
+                </button>
+                <button id="longbreakButton" class="timerControls">
+                    Long Break
+                </button>
+            </div>
+            <div class="musicControl">
+                <img id="musicButton" src="../src/assets/icons/sound-on.svg"> playing 'white noise' <img id="musicArrow" src="../src/assets/icons/arrow-down-circle.svg">
+            </div>
+        </div>
+    </div>
+    <script src="../src/scripts/pomodoro.js"></script>
+</body>
+</html>
