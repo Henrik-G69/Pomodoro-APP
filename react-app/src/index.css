@@ -1,8 +1,4 @@
 :root{
-    --color-pomodoro: #F61E1E ;
-    --color-pomodoro-background: #F2EFEC ;
-    --color-break: #45C35E;
-    --color-break-background: #E9F3E1;
     --color-break-background-hover: #d1d4ce;
     --sound-color-border: rgba(51, 51, 51, 0.3);
     --sound-color-border-hover: rgba(128, 128, 128, 1); 
@@ -12,16 +8,16 @@
 
 *{
     font-family:"M Plus Rounded 1c", sans-serif;
-    background: var(--color-break-background);
 }
 .App_Container{
     display: flex;
     gap: 12vh;
-    transform: translateY(30%);
     justify-self: center;
     align-items: center;
     justify-content: center;
     align-items: center;
+    height: fit-content;
+    margin: 15vh;
 }
 .PomodoroIcon{
     align-items: center;
@@ -53,9 +49,9 @@
     margin-left: 7vh;
     margin-top: 3vh;
     filter: blur(5px);
-    animation-duration: 1.2s;
+    animation-duration: 1.245s;
     animation-name: shadowFloating;
-    animation-direction: alternate-reverse;
+    animation-direction: alternate;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
@@ -72,7 +68,6 @@
     width: 5vh;
     height: 5vh;
     border-radius: 3.5vh;
-    background-color: var(--color-break);
     border: none;
     margin: 0px;
 }
@@ -82,10 +77,9 @@
 }
 #middleButton{
     margin-top: 9%;
-    width: 7vh;
-    height: 7vh;
 }
 .PomodoroControlsImg{
+    margin-top: 0.5vh;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -94,18 +88,28 @@
 }
 
 .Timer{
-    margin-top: 3vh;
-    display: grid;
-    gap: 1vh;
+    display: block;
     place-items: center;
     text-align: center;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 60vh;
 }
 .currentTask{
-    color: var(--color-break);
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    background: transparent;
     text-align: center;
-    font-size: 3.8vh;
+    font-size: 3vh;
     font-weight: 500;
+    outline: none;
+    box-sizing: border-box;
+    padding: 0;
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
 }
 .timerCount{
     color: black;
@@ -115,7 +119,12 @@
     text-align: center;
     padding: 0;
     margin: 0px;
-    margin-bottom: 9vh;
+    height:min-content;
+    vertical-align: middle;
+    background: transparent;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
 }
 .timerControls_Pomodoro{
     display: flex;
@@ -126,7 +135,6 @@
     font-weight: 600;
     font-size: 1em;
     border: none;
-    background-color: #45C35E;
     min-width: 16vh;
     min-height: 5vh;
     padding-left: 3vh;
@@ -139,6 +147,8 @@
     transform: scale(1.08);
 }
 .musicControl{
+    position: relative;
+    display: inline-block;
     color: var(--sound-color);
     text-align: center;
     font-size: smaller;
@@ -165,8 +175,11 @@
     margin-bottom: 1.5vh;
     justify-items: left;
     background: transparent;
+    display: none;
+    position: absolute;
 }
 .songsList li{
+    display: block;
     margin-left: 3vh;
     cursor: pointer;
     list-style-type: none;

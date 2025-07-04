@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TimerContext } from './TimerContext'
+import EditingDiv from './EditingDiv'
 
-export default function Timer({time}) {
+export default function Timer() {
+  const {currentTimer, setTimer} = useContext(TimerContext);
   return (
     <div className='Timer'>
-      <p className='timerCount'>30:00{onclick}</p>
+      <EditingDiv divclass='timerCount' content={currentTimer} changecontent={setTimer}></EditingDiv>
     </div>
   )
 }
