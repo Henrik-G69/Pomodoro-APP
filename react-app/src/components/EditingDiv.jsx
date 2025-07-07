@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function EditingDiv({changecontent, content, divclass, style}) {
+export default function EditingDiv({changecontent, content, divclass, style, maxlength}) {
     const [isEditing, setEditing] = useState(false)
 
     function editDiv(){
@@ -16,7 +16,7 @@ export default function EditingDiv({changecontent, content, divclass, style}) {
     }
   return (
     isEditing ? <input className={divclass} autoFocus defaultValue={content} onBlur={editStop} 
-    onChange={(e) => {changecontent(e.target.value)}} onKeyDown={pressEnter} maxLength={39}
+    onChange={(e) => {changecontent(e.target.value)}} onKeyDown={pressEnter} maxLength={maxlength}
     style={style}
     ></input> :
     <div className={divclass} style={style} onDoubleClick={editDiv}>{content}</div>

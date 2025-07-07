@@ -6,7 +6,7 @@ export default function Timer() {
   const {currentTimer, setTimer} = useContext(TimerContext);
   return (
     <div className='Timer'>
-      <EditingDiv divclass='timerCount' content={currentTimer} changecontent={setTimer}></EditingDiv>
+      <EditingDiv divclass='timerCount' content={currentTimer} changecontent={setTimer} maxlength={4}></EditingDiv>
     </div>
   )
 }

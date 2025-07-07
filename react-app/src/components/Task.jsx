@@ -5,6 +5,6 @@ import { TaskContext } from "./TaskContext";
 export default function Task({style}) {
   const {currentTask, setTask} = useContext(TaskContext);
   return (
-    <EditingDiv changecontent= {setTask} content={currentTask} style={style} divclass={'currentTask'}></EditingDiv>
+    <EditingDiv maxlength={39} changecontent= {setTask} content={currentTask} style={style} divclass={'currentTask'}></EditingDiv>
   )
 }
