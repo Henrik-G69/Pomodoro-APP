@@ -4,10 +4,12 @@ import Pomodoro from './features/Pomodoro'
 import {ModeProvider} from './components/ModeContext'
 import { TaskProvider } from './components/TaskContext'
 import { TimerProvider } from './components/TimerContext'
+import { IsPlayingProvider } from './components/IsPlayingContext'
 
 function App() {
 
   return (
+    <IsPlayingProvider>
     <TimerProvider>
     <TaskProvider>
     <ModeProvider>
@@ -18,6 +20,7 @@ function App() {
     </ModeProvider>
     </TaskProvider>
     </TimerProvider>
+    </IsPlayingProvider>
   )
 }
 
