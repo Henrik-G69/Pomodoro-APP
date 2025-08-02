@@ -63,7 +63,8 @@ export const TimerProvider = ({children}) =>{
 
     // we don't pass streaks and setStreaks because incrementStreaks and resetStreaks properly does their jobs.
     const value = {currentTimer, setTimer, isPlaying, setIsPlaying, isLongBreak, incrementStreaks,
-        resetStreaks, isPomodoro, setPomodoro, ModesStyles, forceLongBreak, reverseForced, isTyping, setIsTyping
+        resetStreaks, isPomodoro, setPomodoro, ModesStyles, forceLongBreak, reverseForced, isTyping, setIsTyping, pomodoroTime,
+        normalBreakTime, longBreakTime, breaktime
     }
     return(
         <TimerContext.Provider value={value}>
