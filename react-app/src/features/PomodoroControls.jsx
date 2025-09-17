@@ -11,11 +11,15 @@ import { TimerContext } from '../components/TimerContext'
 export default function PomodoroControls() {
 
   const {isPlaying, setIsPlaying, resetPomodoro,
+    setIsModalOpen,
     ModesStyles: currentStyle, ispomodoro: currentMode
   } = useContext(TimerContext);
 
   function StopStart(){
     setIsPlaying(!isPlaying)
+  }
+  function openModal(){
+    setIsModalOpen(true)
   }
   return (
     <div className='PomodoroControls'>
@@ -26,7 +30,8 @@ export default function PomodoroControls() {
       onClick={StopStart}>
         <img src={isPlaying ? StopIcon : PlayIcon} alt="start pomodoro" className='PomodoroControlsImg'/>
       </Button>
-      <Button buttonClass='PomodoroControlsbutton' style={{background: currentStyle.buttons.background}}>
+      <Button buttonClass='PomodoroControlsbutton' style={{background: currentStyle.buttons.background}}
+      onClick={openModal}>
         <img src={SettingsIcon} alt="pomodoro settings" className='PomodoroControlsImg'/>
       </Button>
     </div>

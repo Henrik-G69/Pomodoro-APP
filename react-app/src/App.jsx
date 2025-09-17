@@ -4,7 +4,7 @@ import Pomodoro from './features/Pomodoro'
 import { TaskProvider } from './components/TaskContext'
 import { TimerProvider } from './components/TimerContext'
 import { SoundProvider } from './components/SoundContext'
-
+import SettingsModal from './features/SettingsModal'
 
 function App() {
 
@@ -15,6 +15,7 @@ function App() {
       <div className='App_Container'>
         <Pomodoro></Pomodoro>
         <PomodoroTimer></PomodoroTimer>
+        <SettingsModal></SettingsModal>
        </div>
     </TaskProvider>
     </TimerProvider>

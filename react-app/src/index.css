@@ -193,6 +193,135 @@
     transition: transform 0.2s ease-in-out;
     background-color: rgb(221, 221, 221);
 }
+
+/* Settings-Modal Styles */
+.settings-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: opacity 300ms;
+}
+
+.settings-modal-content {
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.settings-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.settings-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.settings-modal-close-button {
+  color: #9ca3af;
+  transition: color 200ms;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.settings-modal-close-button:hover {
+  color: #4b5563;
+}
+
+.settings-modal-close-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.settings-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settings-modal-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.settings-modal-input {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  transition: border-color 200ms, box-shadow 200ms;
+}
+
+.settings-modal-input:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+.settings-modal-flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+.settings-modal-checkbox-input {
+  height: 1rem;
+  width: 1rem;
+  color: #dc2626;
+  border-color: #d1d5db;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.settings-modal-label-checkbox {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  color: #111827;
+}
+
+.settings-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settings-modal-save-button {
+  color: white;
+  padding: 0.5rem 1.25rem;
+  background-color: #ef4444;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.settings-modal-save-button:hover {
+  background-color: #F61E1E;
+}
+
+
 @keyframes Floating{
     from{
 

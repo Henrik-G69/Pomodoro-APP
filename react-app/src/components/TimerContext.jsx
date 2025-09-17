@@ -22,11 +22,14 @@ export const TimerProvider = ({children}) =>{
     const [isTyping, setIsTyping] = useState(false);
     const [playPressSound] = useSound(presssound, {volume: 0.25})
     const [playAlarmSound] = useSound(alarmsound, {volume: 0.25})
-    const {isSoundOn, setSoundOn} = useContext(SoundContext)
+    const {isSoundOn, setSoundOn} = useContext(SoundContext);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-    if(currentTimer === 0){
-        playAlarmSound()
+    useEffect(() => {
+    if (currentTimer === 0 && isSoundOn) {
+        playAlarmSound();
     }
+    }, [currentTimer, isSoundOn, playAlarmSound]);
 
     //this sets the current timer and sets its dependencies
     useEffect(() => {
@@ -35,10 +38,11 @@ export const TimerProvider = ({children}) =>{
 
     //this plays the button-press sound
     useEffect(() => {
-      playPressSound()
-    },
-        [isPlaying]
-  )
+    if (isSoundOn) {
+        playPressSound();
+    }
+    }, [isPlaying]);
+
     //this sets the streaks and reset them if its above 3
     useEffect(() => {
         if(streaks > minimumStreaks){
@@ -84,7 +88,8 @@ export const TimerProvider = ({children}) =>{
     // we don't pass streaks and setStreaks because incrementStreaks and resetStreaks properly does their jobs.
     const value = {currentTimer, setTimer, isPlaying, setIsPlaying, isLongBreak, incrementStreaks,
         resetStreaks, isPomodoro, setPomodoro, ModesStyles, forceLongBreak, reverseForced, isTyping, setIsTyping, pomodoroTime,
-        normalBreakTime, longBreakTime, breaktime, resetPomodoro
+        normalBreakTime, longBreakTime, breaktime, resetPomodoro, isModalOpen, setIsModalOpen,
+        setPomodoroTime, setNormalBreakTime, setLongBreakTime, isSoundOn, setSoundOn, setMinimumStreaks, minimumStreaks
     }
     return(
         <TimerContext.Provider value={value}>
